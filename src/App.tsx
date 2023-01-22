@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -6,7 +6,9 @@ function App() {
       <header className="App-header">
         <h1>Our new webshop</h1>
       </header>
-      <div className="Main-content"></div>
+      <div className="Main-content">
+        <p>Hello</p>
+      </div>
     </div>
   );
 }
