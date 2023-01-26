@@ -1,4 +1,6 @@
 import './App.css';
+import Catalog from './components/catalog/Catalog';
+import InformationBox from './components/InformationBox/InformationBox';
 
 function App() {
   return (
@@ -7,7 +9,8 @@ function App() {
         <h1>Our new webshop</h1>
       </header>
       <div className="Main-content">
-        <p>Hello</p>
+        <Catalog />
+        <InformationBox />
       </div>
     </div>
   );

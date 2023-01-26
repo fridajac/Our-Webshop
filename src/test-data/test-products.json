@@ -19,12 +19,5 @@
     "category": "Spices",
     "price": 10.99,
     "status": "Out of stock"
-  },
-  {
-    "id": 4,
-    "name": "Chili sauce",
-    "category": "Sauces",
-    "price": 29.99,
-    "status": "In stock"
   }
 ]
