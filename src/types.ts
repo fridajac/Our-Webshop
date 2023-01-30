@@ -4,4 +4,5 @@ export type ProductItem = {
   category: string;
   price: number;
   inStock: boolean;
+  labels?: string[];
 };

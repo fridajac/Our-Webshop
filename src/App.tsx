@@ -9,8 +9,8 @@ function App() {
         <h1>Our new webshop</h1>
       </header>
       <div className="Main-content">
-        <Catalog />
         <InformationBox />
+        <Catalog />
       </div>
     </div>
   );

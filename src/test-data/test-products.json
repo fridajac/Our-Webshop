@@ -4,20 +4,23 @@
     "name": "Taco sauce",
     "category": "Sauces",
     "price": 29.99,
-    "inStock": true
+    "inStock": true,
+    "labels": ["Vegan", "Eco-friendly"]
   },
   {
     "id": 2,
     "name": "Hamburger cheese",
     "category": "Dairy products",
     "price": 44.99,
-    "inStock": true
+    "inStock": true,
+    "labels": ["Vegan", "Eco-friendly"]
   },
   {
     "id": 3,
     "name": "Cilantro",
     "category": "Spices",
     "price": 10.99,
-    "inStock": false
+    "inStock": false,
+    "labels": ["Vegan", "Eco-friendly"]
   }
 ]

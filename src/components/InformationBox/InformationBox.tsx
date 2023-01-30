@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import products from '../../data/products.json';
 import { getNbrOfProductsInStock, getTotalPrice } from './utilities';
 
@@ -7,15 +7,22 @@ const InformationBox = () => {
   const totalPrice = getTotalPrice(products);
 
   return (
-    <div style={{ marginTop: '2rem' }}>
-      <Typography variant="body1">
-        Number of products: {products.length}
-      </Typography>
-      <Typography variant="body1">
-        Number of products in stock: {nbrOfProductsInStock}
-      </Typography>
-      <Typography variant="body1">Total price: {totalPrice}$ </Typography>
-    </div>
+    <Card
+      sx={{
+        width: 350,
+        margin: '2rem',
+      }}
+    >
+      <CardContent>
+        <Typography variant="h5" fontWeight="bold">
+          About the products
+        </Typography>
+        <Typography variant="h6">
+          Number of products in stock: {nbrOfProductsInStock}
+        </Typography>
+        <Typography variant="h6">Total price: ${totalPrice} </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
