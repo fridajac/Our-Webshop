@@ -1,7 +1,7 @@
 import { ProductItem } from '../../types';
 
 export function getNbrOfProductsInStock(products: ProductItem[]): number {
-  return products.filter((product) => product.status === 'In stock').length;
+  return products.filter((product) => product.inStock).length;
 }
 
 export function getTotalPrice(products: ProductItem[]): number {

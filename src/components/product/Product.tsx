@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -9,7 +10,7 @@ import COLORS from '../../styles/colors';
 import { ProductItem } from '../../types';
 
 const Product = (props: ProductItem) => {
-  const { name, category, price, status } = props;
+  const { name, category, price, inStock } = props;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -20,23 +21,35 @@ const Product = (props: ProductItem) => {
           alt="product image"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            fontWeight="bold"
+            color="text.secondary"
+          >
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body1" color="text.secondary" marginBottom={4}>
             {category}
           </Typography>
-          <Typography variant="h4" color="text.secondary">
-            {price}$
+          <Typography variant="h5" color="text.secondary">
+            ${price}
           </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            style={{ color: '#f9f9f9', backgroundColor: '#1a1a1a' }}
+            disabled={!inStock}
+          >
+            Add to cart
+          </Button>
           <Typography
             variant="body1"
             data-testid="status-display"
-            color={
-              status === 'In stock' ? COLORS.statusGreen : COLORS.statusRed
-            }
+            color={inStock ? COLORS.statusGreen : COLORS.statusRed}
           >
-            {status}
+            {inStock ? 'In stock' : 'Out of stock'}
           </Typography>
         </CardContent>
       </CardActionArea>
