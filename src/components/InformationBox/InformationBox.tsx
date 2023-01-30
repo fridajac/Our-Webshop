@@ -1,8 +1,9 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import products from '../../data/products.json';
+import useProducts from '../../hooks/useProducts';
 import { getNbrOfProductsInStock, getTotalPrice } from './utilities';
 
 const InformationBox = () => {
+  const products = useProducts();
   const nbrOfProductsInStock = getNbrOfProductsInStock(products);
   const totalPrice = getTotalPrice(products);
 
