@@ -26,7 +26,7 @@ const Product = (props: ProductItem) => {
           variant="h5"
           component="div"
           fontWeight="bold"
-          color="text.secondary"
+          color="text.primary"
         >
           {name}
         </Typography>
@@ -51,7 +51,7 @@ const Product = (props: ProductItem) => {
           {category}
         </Typography>
       </CardContent>
-      <Typography variant="h4" color="text.secondary" marginBottom={1}>
+      <Typography variant="h4" color="text.primary" marginBottom={3}>
         ${price}
       </Typography>
       <Button

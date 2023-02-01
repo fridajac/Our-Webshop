@@ -11,12 +11,12 @@ const InformationBox = () => {
     <Card
       sx={{
         width: 350,
-        margin: '2rem',
+        margin: '1.5rem',
       }}
     >
       <CardContent>
         <Typography variant="h5" fontWeight="bold">
-          About the products
+          Info about the products
         </Typography>
         <Typography variant="h6">
           Number of products in stock: {nbrOfProductsInStock}

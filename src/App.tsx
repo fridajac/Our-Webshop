@@ -1,5 +1,6 @@
 import './App.css';
 import Catalog from './components/catalog/Catalog';
+import InformationBox from './components/InformationBox/InformationBox';
 
 function App() {
   return (
@@ -7,9 +8,10 @@ function App() {
       <header className="App-header">
         <h1>Our new webshop</h1>
       </header>
-      <div className="Main-content">
+      <main>
+        <InformationBox />
         <Catalog />
-      </div>
+      </main>
     </div>
   );
 }
