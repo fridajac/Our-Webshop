@@ -1,44 +1,81 @@
 import { render, screen } from '@testing-library/react';
 import COLORS from '../../styles/colors';
-import products from '../../test-data/test-products.json';
+
 import Product from './Product';
 
-const isASauceProduct = products[0];
-const inStockProduct = products[1];
-const outOfStockProduct = products[2];
+const sauceProduct = {
+  id: 1,
+  name: 'Taco sauce',
+  category: 'Sauces',
+  price: 29.99,
+  inStock: true,
+};
+
+const productInStock = {
+  id: 1,
+  name: 'Taco sauce',
+  category: 'Sauces',
+  price: 29.99,
+  inStock: true,
+};
+
+const productOutOfStock = {
+  id: 1,
+  name: 'Taco sauce',
+  category: 'Sauces',
+  price: 29.99,
+  inStock: false,
+};
+
+const productWithLabels = {
+  id: 2,
+  name: 'Hamburger cheese',
+  category: 'Dairy products',
+  price: 44.99,
+  inStock: true,
+  labels: ['Vegan', 'Eco-friendly'],
+};
+
+const productWithoutLabels = {
+  id: 4,
+  name: 'Thyme',
+  category: 'Spices',
+  price: 14.0,
+  inStock: true,
+};
 
 test('renders product name', () => {
-  render(<Product {...isASauceProduct} />);
+  render(<Product {...sauceProduct} />);
   const name = screen.getByText(/Taco sauce/i);
   expect(name).toBeInTheDocument();
 });
 
 test('renders category', () => {
-  render(<Product {...isASauceProduct} />);
+  render(<Product {...sauceProduct} />);
   const category = screen.getByText(/Sauces/i);
   expect(category).toBeInTheDocument();
 });
 
 test('renders out of stock', () => {
-  render(<Product {...outOfStockProduct} />);
-  const element = screen.getByTestId('status-display');
-  expect(element).toHaveTextContent('Out of stock');
+  render(<Product {...productOutOfStock} />);
+  const statusDisplay = screen.getByTestId('status-display');
+  expect(statusDisplay).toHaveTextContent('Out of stock');
 });
 
 test('renders in stock', () => {
-  render(<Product {...inStockProduct} />);
-  const element = screen.getByTestId('status-display');
-  expect(element).toHaveTextContent('In stock');
+  render(<Product {...productInStock} />);
+  const statusDisplay = screen.getByTestId('status-display');
+  expect(statusDisplay).toHaveTextContent('In stock');
 });
 
 test('renders out of stock in red', () => {
-  render(<Product {...outOfStockProduct} />);
-  const element = screen.getByTestId('status-display');
-  expect(element).toHaveStyle(`color:${COLORS.statusRed}`);
+  render(<Product {...productOutOfStock} />);
+  const statusDisplay = screen.getByTestId('status-display');
+  expect(statusDisplay).toHaveStyle(`color:${COLORS.statusRed}`);
 });
 
 test('renders in stock in green', () => {
-  render(<Product {...inStockProduct} />);
-  const element = screen.getByTestId('status-display');
-  expect(element).toHaveStyle(`color:${COLORS.statusGreen}`);
+  render(<Product {...productInStock} />);
+  const statusDisplay = screen.getByTestId('status-display');
+  expect(statusDisplay).toHaveStyle(`color:${COLORS.statusGreen}`);
 });

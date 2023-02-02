@@ -21,7 +21,10 @@ const InformationBox = () => {
         <Typography variant="h6">
           Number of products in stock: {nbrOfProductsInStock}
         </Typography>
-        <Typography variant="h6">Total price: ${totalPrice} </Typography>
+
+        <Typography variant="h6">
+          Total price: ${totalPrice.toFixed(2)}
+        </Typography>
       </CardContent>
     </Card>
   );

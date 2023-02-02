@@ -7,11 +7,12 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { FC } from 'react';
 import COLORS from '../../styles/colors';
 import { ProductItem } from '../../types';
 
-const Product = (props: ProductItem) => {
-  const { name, category, price, inStock, labels } = props;
+const Product: FC<ProductItem> = (product) => {
+  const { name, category, price, inStock, labels } = product;
   return (
     <Card sx={{ maxWidth: 345, height: 540 }}>
       <CardMedia
@@ -31,13 +32,12 @@ const Product = (props: ProductItem) => {
           {name}
         </Typography>
         {labels && (
-          <Grid container spacing={1}>
+          <Grid container spacing={1} data-testid="chip-display">
             {labels.map((label, index) => {
               return (
-                <Grid item>
+                <Grid key={index} item>
                   <Chip
                     label={label.toUpperCase()}
-                    key={index}
                     variant="outlined"
                     size="medium"
                     style={{ backgroundColor: COLORS.labelColor }}

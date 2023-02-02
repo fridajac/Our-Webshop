@@ -30,5 +30,21 @@
     "price": 29.99,
     "inStock": false,
     "labels": ["Vegan", "Eco-friendly"]
+  },
+  {
+    "id": 5,
+    "name": "Goat cheese",
+    "category": "Dairy products",
+    "price": 80.0,
+    "inStock": false,
+    "labels": ["Eco-friendly"]
+  },
+  {
+    "id": 6,
+    "name": "Hamburger bread",
+    "category": "Bread",
+    "price": 50.0,
+    "inStock": true,
+    "labels": ["Vegan"]
   }
 ]
