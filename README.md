@@ -1,4 +1,4 @@
-# About Our Webshop :package: :postbox:
+# About THIS Webshop :package: :postbox:
 
 A simple React webshop application created to practise Jest and Cypress testing.
 
